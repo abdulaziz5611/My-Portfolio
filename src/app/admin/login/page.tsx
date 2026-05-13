@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { createSupabaseBrowserClient } from "@/lib/supabase/client";
 
@@ -33,9 +34,9 @@ export default function LoginPage() {
         className="w-full max-w-sm bg-white rounded-2xl border border-slate-100 shadow-sm p-8 space-y-5"
       >
         <div>
-          <div className="flex items-center gap-1 font-extrabold text-2xl">
-            <span>AA</span>
-            <span className="block w-7 h-[3px] bg-[#ff4d4d] rounded-full ml-1" />
+          <div className="flex items-center gap-2">
+            <Image src="/logo.png" alt="Logo" width={44} height={44} className="object-contain" />
+            <span className="block w-7 h-[3px] bg-[#ff4d4d] rounded-full" />
           </div>
           <h1 className="mt-4 text-2xl font-extrabold">Admin Login</h1>
           <p className="text-sm text-slate-500 mt-1">

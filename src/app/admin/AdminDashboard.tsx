@@ -66,7 +66,7 @@ export function AdminDashboard({ initial }: { initial: SiteContent }) {
       <header className="sticky top-0 z-30 bg-white border-b border-slate-100">
         <div className="mx-auto max-w-5xl px-6 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2 font-extrabold">
-            <span>AA</span>
+            <Image src="/logo.png" alt="Logo" width={32} height={32} className="object-contain" />
             <span className="block w-6 h-[3px] bg-[#ff4d4d] rounded-full" />
             <span className="text-sm font-medium text-slate-500 ml-2">/ Admin</span>
           </div>

@@ -53,13 +53,13 @@ function highlightWords(text: string, highlights: string[]) {
   });
 }
 
-function NavBar({ initials }: { initials: string }) {
+function NavBar() {
   return (
     <header className="sticky top-0 z-40 backdrop-blur bg-white/80 border-b border-slate-100">
       <div className="mx-auto max-w-6xl flex items-center justify-between px-6 py-4">
-        <Link href="#home" className="flex items-center gap-1 font-extrabold text-xl">
-          <span className="text-slate-900">{initials}</span>
-          <span className="block w-6 h-[3px] bg-[#ff4d4d] rounded-full ml-1" />
+        <Link href="#home" className="flex items-center gap-2">
+          <Image src="/logo.png" alt="Logo" width={36} height={36} className="object-contain" priority />
+          <span className="block w-6 h-[3px] bg-[#ff4d4d] rounded-full" />
         </Link>
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
           {navLinks.map((l) => (
@@ -543,9 +543,12 @@ function Footer({ name, socials }: { name: string; socials: SiteContent["socials
   return (
     <footer className="border-t border-slate-100 py-8">
       <div className="mx-auto max-w-6xl px-6 flex flex-col md:flex-row gap-4 items-center justify-between">
-        <p className="text-sm text-slate-500 text-center md:text-left">
-          © {new Date().getFullYear()} {name}. Designed with <span className="text-[#ff4d4d]">♥</span>.
-        </p>
+        <div className="flex items-center gap-3">
+          <Image src="/logo.png" alt="Logo" width={32} height={32} className="object-contain" />
+          <p className="text-sm text-slate-500 text-center md:text-left">
+            © {new Date().getFullYear()} {name}. Designed with <span className="text-[#ff4d4d]">♥</span>.
+          </p>
+        </div>
         <div className="flex gap-3">
           <a href={socials.youtube} className="w-9 h-9 rounded-full bg-slate-100 grid place-items-center hover:bg-rose-100"><YouTubeIcon /></a>
           <a href={socials.github} className="w-9 h-9 rounded-full bg-slate-100 grid place-items-center hover:bg-rose-100"><GitHubIcon /></a>
@@ -638,7 +641,7 @@ export default async function Home() {
   const content = await getSiteContent();
   return (
     <>
-      <NavBar initials={content.profile.initials} />
+      <NavBar />
       <main>
         <Hero content={content} />
         <About content={content} />
